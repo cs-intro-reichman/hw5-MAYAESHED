@@ -111,11 +111,11 @@ public class Scrabble {
 			//// that completes the hand playing loop
 			if (input.equals(".")) {
 				break;
-			} if (!MyString.subsetOf(input, hand)) {
+			} else if (!MyString.subsetOf(input, hand)) {
 				System.out.println( "Invalid word. Try again");
-			} if (!isWordInDictionary(input)) {
+			} else if (!isWordInDictionary(input)) {
 				System.out.println("No such word in the dictionary. Try again.");
-			} if (isWordInDictionary(input)) {
+			} else {
 				score += wordScore(input);
 				System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score
 				+ " points");
@@ -127,7 +127,6 @@ public class Scrabble {
 	        System.out.println("Ran out of letters. Total score: " + score + " points");
 		} else {
 			System.out.println("End of hand. Total score: " + score + " points");
-			System.out.println();
 		}
 	}
 
