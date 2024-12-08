@@ -115,16 +115,14 @@ public class MyString {
         if (str2.length() == 0) {
             return str1;
         }
-        String newStr1 = str1;
         for (int i = 0; i < str2.length(); i++) {
             char ch = str2.charAt(i);
-            for (int j = 0; j < newStr1.length(); j++) {
-                if (ch == newStr1.charAt(j)) {
-                    newStr1 = newStr1.substring(0, j) + newStr1.substring(j+1);
-                }
+            int index = str1.indexOf(ch);
+            if (index != -1) {
+                str1 = str1.substring(0, index) + str1.substring(index + 1);
             }
         }
-        return newStr1;
+        return str1;
     }
 
     /**
